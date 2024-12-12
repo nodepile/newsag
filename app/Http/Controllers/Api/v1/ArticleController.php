@@ -30,8 +30,8 @@ class ArticleController extends Controller
             $query->where('title', 'like', '%' . $request->input('query') . '%');
         }
 
-        if ($request->filled('published_at')) {
-            $query->whereDate('published_at', $request->input('published_at'));
+        if ($request->filled('date')) {
+            $query->whereDate('published_at', $request->input('date'));
         }
 
         if ($request->filled('authors')) {
