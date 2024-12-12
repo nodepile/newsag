@@ -55,7 +55,7 @@ class ArticleController extends Controller
             );
         }
 
-        return ArticleResource::collection($query->paginate(50))
+        return ArticleResource::collection($query->orderByDesc('published_at')->paginate(50))
             ->response()
             ->setEncodingOptions(JSON_PRETTY_PRINT);
     }
